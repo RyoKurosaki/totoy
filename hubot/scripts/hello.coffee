@@ -16,3 +16,6 @@ module.exports = (robot) ->
 
     robot.hear /baby$/i, (msg) ->
         msg.send "Jhon!"
+
+    robot.hear /hitoshi$/i, (msg) ->
+        msg.send "Kawaii♡"

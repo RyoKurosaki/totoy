@@ -7,7 +7,7 @@
 backlogUrl = 'https://i2m-dev.backlog.com/'
 
 module.exports = (robot) ->
-  robot.router.post "/hubot/:test", (req, res) ->
+  robot.router.post "/hubot/:room", (req, res) ->
     { room } = req.params
     { body } = req
     try

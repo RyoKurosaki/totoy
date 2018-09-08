@@ -8,14 +8,16 @@ services:
       - '6379:6379'
     volumes:
       - /tmp
-  hubot_slack:
+  web:
     restart: always
-    build: .
+    build:
+      context: ./hubot
+      dockerfile: "Dockerfile.web"
     volumes:
-      - ./scripts:/home/hubot/scripts
+      - ./hubot/scripts:/home/hubot/scripts
     ports:
       - '9999:9999'
-    env_file: .env
+    env_file: ./hubot/.env
     environment:
       TZ: Asia/Tokyo
     links:
